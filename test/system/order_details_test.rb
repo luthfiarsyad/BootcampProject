@@ -14,8 +14,10 @@ class OrderDetailsTest < ApplicationSystemTestCase
     visit order_details_url
     click_on "New order detail"
 
+    fill_in "Customer", with: @order_detail.customer
+    fill_in "Email", with: @order_detail.email
     fill_in "Product", with: @order_detail.product_id
-    fill_in "User", with: @order_detail.user_id
+    fill_in "Quantity", with: @order_detail.quantity
     click_on "Create Order detail"
 
     assert_text "Order detail was successfully created"
@@ -26,8 +28,10 @@ class OrderDetailsTest < ApplicationSystemTestCase
     visit order_detail_url(@order_detail)
     click_on "Edit this order detail", match: :first
 
+    fill_in "Customer", with: @order_detail.customer
+    fill_in "Email", with: @order_detail.email
     fill_in "Product", with: @order_detail.product_id
-    fill_in "User", with: @order_detail.user_id
+    fill_in "Quantity", with: @order_detail.quantity
     click_on "Update Order detail"
 
     assert_text "Order detail was successfully updated"

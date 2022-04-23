@@ -15,6 +15,7 @@ class ProductsTest < ApplicationSystemTestCase
     click_on "New product"
 
     fill_in "Category", with: @product.category_id
+    fill_in "Description", with: @product.description
     fill_in "Name", with: @product.name
     fill_in "Price", with: @product.price
     click_on "Create Product"
@@ -28,6 +29,7 @@ class ProductsTest < ApplicationSystemTestCase
     click_on "Edit this product", match: :first
 
     fill_in "Category", with: @product.category_id
+    fill_in "Description", with: @product.description
     fill_in "Name", with: @product.name
     fill_in "Price", with: @product.price
     click_on "Update Product"
